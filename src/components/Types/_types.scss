@@ -1,0 +1,45 @@
+$color: #EB4747;
+.types{
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+ &__title {
+  font-size: 32px;
+  line-height: 130%;
+  font-weight: 400;
+  margin-bottom: 30px;
+ }
+ &__items {
+  display: flex;
+  flex-wrap: wrap;
+ }
+ &__item {
+  background: #F9F9FA;
+  border: 1px solid #CACCCF;
+  border-radius: 2px;
+  padding: 8.5px 8px;
+  margin: 0 8px 8px 0;
+  font-size: 12px;
+  line-height: 14px;
+ }
+ &__more {
+ border: 1px solid $color;
+ }
+ &__item:hover {
+  background-color: $color;
+  color: white;
+  cursor: pointer;
+ }
+ &__select {
+  border: none;
+  align-self: flex-end;
+ }
+}
+@media screen and (max-width: 1024px) {
+  .types {
+    &__title {
+      font-size: 20px;
+      line-height: 130%;
+    }
+  }
+}

@@ -1,0 +1,142 @@
+$color: #EB4747;
+.katalog {
+  display: flex;
+  background: #F2F2F2;
+  justify-content: space-between;
+  &__container {
+    display: flex;
+    align-items: center;
+  }
+  &__button {
+    height: 100%;
+    cursor: pointer;
+    background-color: $color;
+    display: flex;
+    align-items: center;
+    color: white;
+    padding: 12px 21px;
+    &-text {
+      font-size: 14px;
+      line-height: 16px;
+    }
+    &-menu {
+      margin-right: 8px;
+      display: flex;
+      flex-direction: column;
+    }
+    &-line {
+      margin-top: 5px;
+    }
+    &-line:first-of-type {
+      margin: 0;
+    }
+  }
+  &__item {
+    padding: 15px 12px 13px 12px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    height: 100%;
+    color: #828282;
+    font-size: 14px;
+    line-height: 130%;
+    border-bottom: 2px solid transparent;
+    cursor: pointer;
+  }
+  &__item:first-of-type {
+    padding: 15px 16px 13px;
+  }
+  &__item:hover {
+    border-bottom: 2px solid $color;
+  }
+  &__znak {
+    color: $color;
+  }
+  &__user {
+    display: flex;
+    align-items: center;
+  }
+  &__login {
+    display: flex;
+    cursor: pointer;
+    &-text {
+      color: $color;
+      margin-right: 5px;
+
+    }
+  }
+  &__icon {
+    width: 27px;
+    height: 23px;
+    margin-right: 21px;
+    cursor: pointer;
+  }
+}
+.back-text {
+  margin: 20px 0 0 20px;
+  font-size: 16px;
+  line-height: 130%;
+  color: $color;
+  cursor: pointer;
+  display: none;
+}
+.back-text::before {
+  content: url('../../images/Vector.svg');
+  margin-right: 20px;
+}
+.katalog1 {
+  display: none
+}
+@media screen and (max-width:1150px) {
+ .katalog {
+  &__item {
+    padding: 10px 10px;
+  }
+  &__icon {
+    margin-right: 10px;
+  }
+ }
+}
+@media screen and (max-width:1100px) {
+  .katalog {
+   &__item {
+     padding: 7px 7px;
+     font-size: 13px;
+     line-height: 110%;
+   }
+  }
+ }
+ @media screen and (max-width:1050px) {
+  .katalog {
+   &__item {
+     padding: 5px 5px;
+   }
+  }
+ }
+ @media screen and (max-width:960px) {
+  .katalog {
+   &__item {
+    font-size: 12px;
+    line-height: 100%;
+     padding: 5px 2x;
+   }
+  }
+ }
+@media screen and (max-width: 820px) {
+  .katalog {
+    display: none;
+  }
+  .back-text {
+    display: block;
+  }
+  .katalog1 {
+    display: flex;
+    margin-left: auto;
+    margin-right: 10px;
+  }
+  .katalog {
+    &__login-text {
+      display: none;
+    }
+  }
+}

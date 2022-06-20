@@ -1,0 +1,10 @@
+.pages {
+  display: flex;
+  color: #828282;
+  margin-top: 39px;
+}
+@media screen and (max-width: 820px) {
+  .pages {
+    display: none;
+  };
+}

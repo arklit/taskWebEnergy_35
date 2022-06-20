@@ -5,7 +5,119 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>test</title>
 </head>
-<body>
-<p class="slovo">asdasdwoeasd</p>
+<body class="page">
+  <header class="header">
+    <div class="header__menu">
+      <img class="header__menu-line" src="<%=require('./images/menuLine.png')%>" alt="menuLine"/>
+      <img class="header__menu-line" src="<%=require('./images/menuLine.png')%>" alt="menuLine"/>
+      <img class="header__menu-line" src="<%=require('./images/menuLine.png')%>" alt="menuLine"/>
+    </div>
+    <img class="header__logo" src="<%=require('./images/logo.png')%>" alt="logo"/>
+    <div class="header__container">
+      <div class="header__city">
+        <p class="header__city-text">Выберите ваш город:</p>
+        <div class="header__city-container">
+          <img class="header__mapPin" src="<%=require('./images/mapPin.svg')%>" alt="mapPin"/>
+          <p class="header__city-name">Санкт-Петербург</p>
+        </div>
+      </div>
+    <div class="header__input-container">
+      <input placeholder="Поиск" class="header__input" />
+      <img class="header__lupa" src="<%=require('./images/lupa.svg')%>" alt="search"/>
+    </div>
+    <div class="header__worktime">
+      <p>Время работы:</p>
+      <p>Пн-Пт с 8:00 — 18:00</p>
+    </div>
+    <div class="header__socials">
+      <img class="header__social" src="<%=require('./images/facebook.png')%>" alt="facebook"/>
+      <img class="header__social" src="<%=require('./images/inst.png')%>" alt="insta"/>
+      <img class="header__social" src="<%=require('./images/vk.png')%>" alt="vk"/>
+    </div>
+    <div class="header__address">
+      <p class="header__address-city">г. Москва</p>
+      <p class="header__address-phone">+7 (495) 777-2345</p>
+      <p class="header__address-call">Заказать звонок</p>
+    </div>
+    <div class="header__address">
+      <p class="header__address-city">г. Ногинск</p>
+      <p class="header__address-phone">+7 (495) 600-4400</p>
+      <p class="header__address-call">Заказать звонок</p>
+    </div>
+    </div>
+    <div class="katalog__user katalog1">
+      <img class="katalog__icon" src="<%=require('./images/like.png')%>" alt="like"/>
+      <img class="katalog__icon" src="<%=require('./images/shop.png')%>" alt="shop"/>
+      <div class="katalog__login">
+        <img class="katalog__login-icon" src="<%=require('./images/user.png')%>" alt="user"/>
+        <p class="katalog__login-text">Войти</p>
+      </div>
+    </div>
+  </header>
+
+  <section class="katalog">
+    <div class="katalog__container">
+    <div class="katalog__button">
+      <div class="katalog__button-menu">
+        <img class="katalog__button-line" src="<%=require('./images/menuLine.png')%>" alt="menuLine"/>
+        <img class="katalog__button-line" src="<%=require('./images/menuLine.png')%>" alt="menuLine"/>
+        <img class="katalog__button-line" src="<%=require('./images/menuLine.png')%>" alt="menuLine"/>
+      </div>
+      <p class="katalog__button-text">Каталог</p>
+    </div>
+    <div class="katalog__item">Новости</div>
+    <div class="katalog__item">О компании</div>
+    <div class="katalog__item">Скидки</div>
+    <div class="katalog__item"">Доставка и оплата</div>
+    <div class="katalog__item">Услуги</div>
+    <div class="katalog__item">Дилеры</div>
+    <div class="katalog__item">Магазины</div>
+    <div class="katalog__item">Контакты</div>
+    <div class="katalog__item katalog__znak">ЧЕСТНЫЙ ЗНАК</div>
+  </div>
+  <div class="katalog__user">
+    <img class="katalog__icon" src="<%=require('./images/like.png')%>" alt="like"/>
+    <img class="katalog__icon" src="<%=require('./images/shop.png')%>" alt="shop"/>
+    <div class="katalog__login">
+      <img class="katalog__login-icon" src="<%=require('./images/user.png')%>" alt="user"/>
+      <p class="katalog__login-text">Войти</p>
+    </div>
+  </div>
+  </section>
+  <div class="back">
+    <p class="back-text">Назад</p>
+  </div>
+  <div class="pages">
+    <p class="pages__item">Каталог товаров ></p>
+    <p class="pages__item">Спецодежда ></p>
+    <p class="pages__item">Спецодежда зимняя</p>
+  </div>
+  <section class="types">
+    <h1 class="types__title">СПЕЦОДЕЖДА ЗИМНЯЯ</h1>
+    <div class="types__items">
+      <div class="types__item">Спецодежда с заключением Минпромторга</div>
+      <div class="types__item">Костюмы женские</div>
+      <div class="types__item">Костюмы мужские</div>
+      <div class="types__item">Костюмы сварщика</div>
+      <div class="types__item">Жилеты женские</div>
+      <div class="types__item">Жилеты мужские</div>
+      <div class="types__item">Жилеты зимние</div>
+      <div class="types__item">Брюки</div>
+      <div class="types__item">Куртки женские</div>
+      <div class="types__item">Куртки мужские</div>
+      <div class="types__item">Полукомбинезоны зимние</div>
+      <div class="types__item types__more">Показать еще</div>
+    </div>
+    <select class="types__select">
+      <option value="price">По возрастанию цены</option>
+      <option value="famous">По популярности</option>
+      <option value="default">По умолчанию</option>
+      <option value="priceLow">По убыванию цены</option>
+      <option value="new">По новинкам</option>
+      <option value="sale">По скидкам</option>
+      <option value="abc">По алфавиту</option>
+    </select>
+    </div>
+  </section>
 </body>
 </html>
