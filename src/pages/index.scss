@@ -1,11 +1,18 @@
+@import '../fonts/fonts';
+@import '../components/Header/header';
+@import '../components/Footer/footer';
+@import '../components/Katalog/katalog';
+@import '../components/Page/pages';
+@import '../components/Types/types';
+
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
 .page {
-  min-width: 375px;
-  max-width: 1920px;
+  min-width: 320px;
+  max-width: 1292px;
   margin: 0 auto;
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
