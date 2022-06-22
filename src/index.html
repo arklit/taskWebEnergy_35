@@ -47,7 +47,7 @@
     </div>
     <div class="katalog__user katalog1">
       <img class="katalog__icon" src="<%=require('./images/like.png')%>" alt="like"/>
-      <img class="katalog__icon" src="<%=require('./images/shop.png')%>" alt="shop"/>
+      <img class="katalog__icon katalog__shop" src="<%=require('./images/shop.png')%>" alt="shop"/>
       <div class="katalog__login">
         <img class="katalog__login-icon" src="<%=require('./images/user.png')%>" alt="user"/>
         <p class="katalog__login-text">Войти</p>
@@ -56,6 +56,7 @@
   </header>
 
   <section class="katalog">
+    <div class="katalog__wrapper">
     <div class="katalog__container">
     <div class="katalog__button">
       <div class="katalog__button-menu">
@@ -77,13 +78,15 @@
   </div>
   <div class="katalog__user">
     <img class="katalog__icon" src="<%=require('./images/like.png')%>" alt="like"/>
-    <img class="katalog__icon" src="<%=require('./images/shop.png')%>" alt="shop"/>
+    <img class="katalog__icon katalog__shop-2" src="<%=require('./images/shop.png')%>" alt="shop"/>
     <div class="katalog__login">
       <img class="katalog__login-icon" src="<%=require('./images/user.png')%>" alt="user"/>
       <p class="katalog__login-text">Войти</p>
     </div>
   </div>
+  </div>
   </section>
+  <div class="wrapper">
   <div class="back">
     <p class="back-text">Назад</p>
   </div>
@@ -98,18 +101,22 @@
       <div class="types__item">Спецодежда с заключением Минпромторга</div>
       <div class="types__item">Костюмы женские</div>
       <div class="types__item">Костюмы мужские</div>
-      <div class="types__item">Костюмы сварщика</div>
-      <div class="types__item">Жилеты женские</div>
-      <div class="types__item">Жилеты мужские</div>
-      <div class="types__item">Жилеты зимние</div>
-      <div class="types__item">Брюки</div>
-      <div class="types__item">Куртки женские</div>
-      <div class="types__item">Куртки мужские</div>
-      <div class="types__item">Полукомбинезоны зимние</div>
-      <div class="types__item types__more">Показать еще</div>
+      <div class="types__item types__mobile">Костюмы сварщика</div>
+      <div class="types__item types__mobile">Жилеты женские</div>
+      <div class="types__item types__mobile">Жилеты мужские</div>
+      <div class="types__item types__mobile">Жилеты зимние</div>
+      <div class="types__item types__mobile">Брюки</div>
+      <div class="types__item types__mobile">Куртки женские</div>
+      <div class="types__item types__mobile">Куртки мужские</div>
+      <div class="types__item types__mobile">Полукомбинезоны зимние</div>
+      <div class="types__item types_hidden">Костюмы сварщика</div>
+      <div class="types__item types_hidden">Жилеты женские</div>
+      <div class="types__item types_hidden">Жилеты мужские</div>
+      <div class="types__more">Показать еще</div>
     </div>
+    <div class="types__flex">
     <select class="types__select">
-      <option value="price">По возрастанию цены</option>
+      <option  class="types__select-option" value="price">По возрастанию цены</option>
       <option value="famous">По популярности</option>
       <option value="default">По умолчанию</option>
       <option value="priceLow">По убыванию цены</option>
@@ -117,7 +124,656 @@
       <option value="sale">По скидкам</option>
       <option value="abc">По алфавиту</option>
     </select>
+    <div class="types__filter">
+      <img class="types__filter-img" src="<%=require('./images/filter.png')%>" alt="filter"/>
+      <p class="types__filter-text">Фильтр</p>
+    </div>
     </div>
   </section>
+  <section class="main">
+    <div class="filter__overlay">
+    <div class="filter filter_disable ">
+      <div class="filter__close">
+        <img class="filter__close-button" src="<%=require('./images/x.svg')%>" alt="close"/>
+      </div>
+      <div class="filter__container">
+        <p class="filter__mobile-text">Фильтр</p>
+        <div class="filter__price">
+          <div class="filter__title">
+            <p class="filter__title-text">Цена, руб</p>
+            <img class="filter__up" src="<%=require('./images/up.png')%>" alt="up"/>
+          </div>
+          <div class="filter__range">
+            <div class="filter__range_item">
+              <p class="filter__range-text">от</p>
+              <input type="number" maxlength="4" value="0" class="filter__range-input input-min"/>
+            </div>
+            <div class="filter__range_item">
+              <p class="filter__range-text">до</p>
+              <input type="number" maxlength="4" value="100000" class="filter__range-input input-max"/>
+            </div>
+          </div>
+          <div class="slider">
+            <div class="progress"></div>
+          </div>
+          <div class="range-input">
+            <input type="range" class="range-min" min="0" max="100000" value="1000" step="100">
+            <input type="range" class="range-max" min="0" max="100000" value="2000" step="100">
+          </div>
+        </div>
+        <div class="filter__type">
+          <div class="filter__title">
+            <p class="filter__type-text">Вид изделия</p>
+            <img class="filter__up" src="<%=require('./images/up.png')%>" alt="up"/>
+          </div>
+          <div class="filter__item">
+            <input class="filter__checkbox" type="checkbox" id="pants" name="pants" />
+            <label class="label" for="pants">Штаны</label>
+          </div>
+          <div class="filter__item">
+            <input class="filter__checkbox" type="checkbox" id="gilet" name="gilet" />
+            <label class="label" for="gilet">Жилет</label>
+          </div>
+          <div class="filter__item">
+            <input class="filter__checkbox" type="checkbox" id="suit" name="suit" />
+            <label class="label" for="suit">Костюм</label>
+          </div>
+          <div class="filter__item">
+            <input class="filter__checkbox" type="checkbox" id="jacket" name="jacket" />
+            <label class="label" for="jacket">Куртка</label>
+          </div>
+          <div class="filter__item">
+            <input class="filter__checkbox" type="checkbox" id="kombi" name="kombi" />
+            <label class="label" for="kombi">Полукомбинезон</label>
+          </div>
+        </div>
+        <div class="filter__season">
+          <div class="filter__title">
+            <p class="filter__type-text">Сезон</p>
+            <img class="filter__up" src="<%=require('./images/up.png')%>" alt="up"/>
+          </div>
+          <div class="filter__item">
+            <input class="filter__checkbox" type="checkbox" id="winter" name="winter" />
+            <label class="label" for="winter">Зима</label>
+          </div>
+        </div>
+        <div class="filter__brand">
+          <div class="filter__title">
+            <p class="filter__type-text">Торговая марка/Бренд</p>
+            <img class="filter__up" src="<%=require('./images/up.png')%>" alt="up"/>
+          </div>
+          <div class="filter__item">
+            <input class="filter__checkbox" type="checkbox" id="brand" name="brand" />
+            <label class="label" for="brand">СИРИУС</label>
+          </div>
+        </div>
+        <div class="filter__gender">
+          <div class="filter__title">
+            <p class="filter__type-text">Пол</p>
+            <img class="filter__up" src="<%=require('./images/up.png')%>" alt="up"/>
+          </div>
+          <div class="filter__item">
+            <input class="filter__checkbox" type="checkbox" id="male" name="male" />
+            <label class="label" for="male">Мужской</label>
+          </div>
+          <div class="filter__item">
+            <input class="filter__checkbox" type="checkbox" id="female" name="female" />
+            <label class="label" for="female">Женский</label>
+          </div>
+          <div class="filter__item">
+            <input class="filter__checkbox" type="checkbox" id="unisex" name="unisex" />
+            <label class="label" for="unisex">Универсальный</label>
+          </div>
+        </div>
+        <div class="filter__sostav">
+          <div class="filter__title">
+            <p class="filter__type-text">Состав</p>
+            <img class="filter__up" src="<%=require('./images/up.png')%>" alt="up"/>
+          </div>
+          <div class="filter__item">
+            <input class="filter__checkbox" type="checkbox" id="1" name="1" />
+            <label class="label" for="1">Брюки</label>
+          </div>
+          <div class="filter__item">
+            <input class="filter__checkbox" type="checkbox" id="2" name="2" />
+            <label class="label" for="2">Куртка</label>
+          </div>
+          <div class="filter__item">
+            <input class="filter__checkbox" type="checkbox" id="3" name="3" />
+            <label class="label" for="3">Жилет</label>
+          </div>
+          <div class="filter__item">
+            <input class="filter__checkbox" type="checkbox" id="4" name="4" />
+            <label class="label"  for="4">Костюм</label>
+          </div>
+          <div class="filter__item">
+            <input class="filter__checkbox" type="checkbox" id="5" name="5" />
+            <label class="label" for="5">Полукомбинезон</label>
+          </div>
+          <div class="filter__item">
+            <input class="filter__checkbox" type="checkbox" id="6" name="6" />
+            <label class="label" for="6">Полукомбинезон</label>
+          </div>
+        </div>
+        <div class="filter__tkan">
+          <div class="filter__title">
+            <p class="filter__type-text">Ткань/Материал верха</p>
+            <img class="filter__up" src="<%=require('./images/up.png')%>" alt="up"/>
+          </div>
+          <div class="filter__item">
+            <input class="filter__checkbox" type="checkbox" id="7" name="7" />
+            <label class="label" for="7">Куртка</label>
+          </div>
+          <div class="filter__item">
+            <input class="filter__checkbox" type="checkbox" id="8" name="8" />
+            <label class="label" for="8">Жилет</label>
+          </div>
+          <div class="filter__item">
+            <input class="filter__checkbox" type="checkbox" id="9" name="9" />
+            <label class="label" for="9">Костюм</label>
+          </div>
+          <div class="filter__item">
+            <input class="filter__checkbox" type="checkbox" id="10" name="10" />
+            <label class="label" for="10">Полукомбинезон</label>
+          </div>
+          <div class="filter__item">
+            <input class="filter__checkbox" type="checkbox" id="11" name="1" />
+            <label class="label" for="11">Брюки</label>
+          </div>
+        </div>
+        <div class="filter__teplo">
+          <div class="filter__title">
+            <p class="filter__type-text">Утеплитель</p>
+            <img class="filter__up" src="<%=require('./images/up.png')%>" alt="up"/>
+          </div>
+          <div class="filter__item">
+            <input class="filter__checkbox" type="checkbox" id="12" name="12" />
+            <label class="label" for="12">Куртка</label>
+          </div>
+          <div class="filter__item">
+            <input class="filter__checkbox" type="checkbox" id="13" name="13" />
+            <label class="label" for="13">Жилет</label>
+          </div>
+          <div class="filter__item">
+            <input class="filter__checkbox" type="checkbox" id="14" name="14" />
+            <label class="label" for="14">Костюм</label>
+          </div>
+          <div class="filter__item">
+            <input class="filter__checkbox" type="checkbox" id="15" name="15" />
+            <label class="label" for="15">Полукомбинезон</label>
+          </div>
+          <div class="filter__item">
+            <input class="filter__checkbox" type="checkbox" id="16" name="16" />
+            <label class="label" for="16">Брюки</label>
+          </div>
+        </div>
+        <div class="filter__profile">
+          <div class="filter__title">
+            <p class="filter__type-text">Назначение</p>
+            <img class="filter__up" src="<%=require('./images/up.png')%>" alt="up"/>
+          </div>
+          <div class="filter__item">
+            <input class="filter__checkbox" type="checkbox" id="17" name="17" />
+            <label class="label" for="17">Костюм</label>
+          </div>
+          <div class="filter__item">
+            <input class="filter__checkbox" type="checkbox" id="18" name="18" />
+            <label class="label" for="18">Полукомбинезон</label>
+          </div>
+          <div class="filter__item">
+            <input class="filter__checkbox" type="checkbox" id="19" name="19" />
+            <label class="label" for="19">Брюки</label>
+          </div>
+        </div>
+        <div class="filter__color">
+          <div class="filter__title">
+            <p class="filter__type-text">Цвет</p>
+            <img class="filter__up" src="<%=require('./images/up.png')%>" alt="up"/>
+          </div>
+          <div class="filter__item">
+            <input class="filter__checkbox" type="checkbox" id="20" name="20" />
+            <label class="label" for="20">Бирюзовый</label>
+          </div>
+          <div class="filter__item">
+            <input class="filter__checkbox" type="checkbox" id="21" name="21" />
+            <label class="label" for="21">Васильковый</label>
+          </div>
+          <div class="filter__item">
+            <input class="filter__checkbox" type="checkbox" id="22" name="22" />
+            <label class="label" for="22">Красный</label>
+          </div>
+          <div class="filter__item">
+            <input class="filter__checkbox" type="checkbox" id="23" name="23" />
+            <label class="label" for="23">Лимонный</label>
+          </div>
+          <div class="filter__item">
+            <input class="filter__checkbox" type="checkbox" id="24" name="24" />
+            <label class="label" for="24">Олива</label>
+          </div>
+          <div class="filter__item">
+            <input class="filter__checkbox" type="checkbox" id="25" name="25" />
+            <label class="label" for="25">Оранжевый</label>
+          </div>
+          <div class="filter__item">
+            <input class="filter__checkbox" type="checkbox" id="26" name="26" />
+            <label class="label" for="26">Серый</label>
+          </div>
+          <div class="filter__item">
+            <input class="filter__checkbox" type="checkbox" id="27" name="27" />
+            <label class="label" for="27">Синий</label>
+          </div>
+          <div class="filter__item">
+            <input class="filter__checkbox" type="checkbox" id="28" name="28" />
+            <label class="label" for="28">Черный, Красный</label>
+          </div>
+          <div class="filter__item">
+            <input class="filter__checkbox" type="checkbox" id="29" name="29" />
+            <label class="label" for="29">Черный</label>
+          </div>
+        </div>
+        <button class="filter__show">Показать (123)</button>
+        <p class="filter__reset">Сбросить</p>
+      </div>
+    </div>
+    </div>
+    <div class="grid">
+    <div class="items">
+      <div class="item ">
+        <div class="item__container">
+          <img class="item__img" src="<%=require('./images/1.png')%>" alt="template"/>
+          <p class="item__art">Арт 1232425</p>
+          <p class="item__about">Костюм "СИРИУС-Горка" куртка, брюки (гражданские размеры) КМФ Мультикам</p>
+          <p class="item__opt">Опт 3144 ₽</p>
+          <p class="item__roz">Розница 4235 ₽</p>
+          <div class="item__buttons">
+            <button class="item__buy">В корзину</button>
+            <div class="item__like"></div>
+          </div>
+        </div>
+      </div>
+      <div class="item">
+        <div class="item__container">
+          <img class="item__img" src="<%=require('./images/2.png')%>" alt="template"/>
+          <p class="item__art">Арт 1232425</p>
+          <p class="item__about">Костюм "СИРИУС-Горка" куртка, брюки (гражданские размеры) КМФ Мультикам</p>
+          <p class="item__opt">Опт 3144 ₽</p>
+          <p class="item__roz">Розница 4235 ₽</p>
+          <div class="item__buttons">
+            <button class="item__buy">В корзину</button>
+            <div class="item__like"></div>
+          </div>
+        </div>
+      </div>
+      <div class="item">
+        <div class="item__container">
+          <img class="item__img" src="<%=require('./images/3.png')%>" alt="template"/>
+          <p class="item__art">Арт 1232425</p>
+          <p class="item__about">Костюм "СИРИУС-Горка" куртка, брюки (гражданские размеры) КМФ Мультикам</p>
+          <p class="item__opt">Опт 3144 ₽</p>
+          <p class="item__roz">Розница 4235 ₽</p>
+          <div class="item__buttons">
+            <button class="item__buy">В корзину</button>
+            <div class="item__like"></div>
+          </div>
+        </div>
+      </div>
+      <div class="item item__576">
+        <div class="item__container">
+          <img class="item__img" src="<%=require('./images/4.png')%>" alt="template"/>
+          <p class="item__art">Арт 1232425</p>
+          <p class="item__about">Костюм "СИРИУС-Горка" куртка, брюки (гражданские размеры) КМФ Мультикам</p>
+          <p class="item__opt">Опт 3144 ₽</p>
+          <p class="item__roz">Розница 4235 ₽</p>
+          <div class="item__buttons">
+            <button class="item__buy">В корзину</button>
+            <div class="item__like"></div>
+          </div>
+        </div>
+      </div>
+      <div class="item item__576">
+        <div class="item__container">
+          <img class="item__img" src="<%=require('./images/1.png')%>" alt="template"/>
+          <p class="item__art">Арт 1232425</p>
+          <p class="item__about">Костюм "СИРИУС-Горка" куртка, брюки (гражданские размеры) КМФ Мультикам</p>
+          <p class="item__opt">Опт 3144 ₽</p>
+          <p class="item__roz">Розница 4235 ₽</p>
+          <div class="item__buttons">
+            <button class="item__buy">В корзину</button>
+            <div class="item__like"></div>
+          </div>
+        </div>
+      </div>
+      <div class="item item__576">
+        <div class="item__container">
+          <img class="item__img" src="<%=require('./images/2.png')%>" alt="template"/>
+          <p class="item__art">Арт 1232425</p>
+          <p class="item__about">Костюм "СИРИУС-Горка" куртка, брюки (гражданские размеры) КМФ Мультикам</p>
+          <p class="item__opt">Опт 3144 ₽</p>
+          <p class="item__roz">Розница 4235 ₽</p>
+          <div class="item__buttons">
+            <button class="item__buy">В корзину</button>
+            <div class="item__like"></div>
+          </div>
+        </div>
+      </div>
+      <div class="item item__576">
+        <div class="item__container">
+          <img class="item__img" src="<%=require('./images/3.png')%>" alt="template"/>
+          <p class="item__art">Арт 1232425</p>
+          <p class="item__about">Костюм "СИРИУС-Горка" куртка, брюки (гражданские размеры) КМФ Мультикам</p>
+          <p class="item__opt">Опт 3144 ₽</p>
+          <p class="item__roz">Розница 4235 ₽</p>
+          <div class="item__buttons">
+            <button class="item__buy">В корзину</button>
+            <div class="item__like"></div>
+          </div>
+        </div>
+      </div>
+      <div class="item item__576">
+        <div class="item__container">
+          <img class="item__img" src="<%=require('./images/4.png')%>" alt="template"/>
+          <p class="item__art">Арт 1232425</p>
+          <p class="item__about">Костюм "СИРИУС-Горка" куртка, брюки (гражданские размеры) КМФ Мультикам</p>
+          <p class="item__opt">Опт 3144 ₽</p>
+          <p class="item__roz">Розница 4235 ₽</p>
+          <div class="item__buttons">
+            <button class="item__buy">В корзину</button>
+            <div class="item__like"></div>
+          </div>
+        </div>
+      </div>
+      <div class="item  item__768">
+        <div class="item__container ">
+          <img class="item__img" src="<%=require('./images/1.png')%>" alt="template"/>
+          <p class="item__art">Арт 1232425</p>
+          <p class="item__about">Костюм "СИРИУС-Горка" куртка, брюки (гражданские размеры) КМФ Мультикам</p>
+          <p class="item__opt">Опт 3144 ₽</p>
+          <p class="item__roz">Розница 4235 ₽</p>
+          <div class="item__buttons">
+            <button class="item__buy">В корзину</button>
+            <div class="item__like"></div>
+          </div>
+        </div>
+      </div>
+      <div class="item  item__768">
+        <div class="item__container ">
+          <img class="item__img" src="<%=require('./images/2.png')%>" alt="template"/>
+          <p class="item__art">Арт 1232425</p>
+          <p class="item__about">Костюм "СИРИУС-Горка" куртка, брюки (гражданские размеры) КМФ Мультикам</p>
+          <p class="item__opt">Опт 3144 ₽</p>
+          <p class="item__roz">Розница 4235 ₽</p>
+          <div class="item__buttons">
+            <button class="item__buy">В корзину</button>
+            <div class="item__like"></div>
+          </div>
+        </div>
+      </div>
+      <div class="item  item__768">
+        <div class="item__container">
+          <img class="item__img" src="<%=require('./images/3.png')%>" alt="template"/>
+          <p class="item__art">Арт 1232425</p>
+          <p class="item__about">Костюм "СИРИУС-Горка" куртка, брюки (гражданские размеры) КМФ Мультикам</p>
+          <p class="item__opt">Опт 3144 ₽</p>
+          <p class="item__roz">Розница 4235 ₽</p>
+          <div class="item__buttons">
+            <button class="item__buy">В корзину</button>
+            <div class="item__like"></div>
+          </div>
+        </div>
+      </div>
+      <div class="item  item__768">
+        <div class="item__container">
+          <img class="item__img" src="<%=require('./images/4.png')%>" alt="template"/>
+          <p class="item__art">Арт 1232425</p>
+          <p class="item__about">Костюм "СИРИУС-Горка" куртка, брюки (гражданские размеры) КМФ Мультикам</p>
+          <p class="item__opt">Опт 3144 ₽</p>
+          <p class="item__roz">Розница 4235 ₽</p>
+          <div class="item__buttons">
+            <button class="item__buy">В корзину</button>
+            <div class="item__like"></div>
+          </div>
+        </div>
+      </div>
+      <div class="item item__1024">
+        <div class="item__container">
+          <img class="item__img" src="<%=require('./images/1.png')%>" alt="template"/>
+          <p class="item__art">Арт 1232425</p>
+          <p class="item__about">Костюм "СИРИУС-Горка" куртка, брюки (гражданские размеры) КМФ Мультикам</p>
+          <p class="item__opt">Опт 3144 ₽</p>
+          <p class="item__roz">Розница 4235 ₽</p>
+          <div class="item__buttons">
+            <button class="item__buy">В корзину</button>
+            <div class="item__like"></div>
+          </div>
+        </div>
+      </div>
+      <div class="item item__1024">
+        <div class="item__container">
+          <img class="item__img" src="<%=require('./images/2.png')%>" alt="template"/>
+          <p class="item__art">Арт 1232425</p>
+          <p class="item__about">Костюм "СИРИУС-Горка" куртка, брюки (гражданские размеры) КМФ Мультикам</p>
+          <p class="item__opt">Опт 3144 ₽</p>
+          <p class="item__roz">Розница 4235 ₽</p>
+          <div class="item__buttons">
+            <button class="item__buy">В корзину</button>
+            <div class="item__like"></div>
+          </div>
+        </div>
+      </div>
+      <div class="item item__1024">
+        <div class="item__container">
+          <img class="item__img" src="<%=require('./images/3.png')%>" alt="template"/>
+          <p class="item__art">Арт 1232425</p>
+          <p class="item__about">Костюм "СИРИУС-Горка" куртка, брюки (гражданские размеры) КМФ Мультикам</p>
+          <p class="item__opt">Опт 3144 ₽</p>
+          <p class="item__roz">Розница 4235 ₽</p>
+          <div class="item__buttons">
+            <button class="item__buy">В корзину</button>
+            <div class="item__like"></div>
+          </div>
+        </div>
+      </div>
+      <div class="item item__1024">
+        <div class="item__container">
+          <img class="item__img" src="<%=require('./images/4.png')%>" alt="template"/>
+          <p class="item__art">Арт 1232425</p>
+          <p class="item__about">Костюм "СИРИУС-Горка" куртка, брюки (гражданские размеры) КМФ Мультикам</p>
+          <p class="item__opt">Опт 3144 ₽</p>
+          <p class="item__roz">Розница 4235 ₽</p>
+          <div class="item__buttons">
+            <button class="item__buy">В корзину</button>
+            <div class="item__like"></div>
+          </div>
+        </div>
+      </div>
+      <div class="item item__1024">
+        <div class="item__container">
+          <img class="item__img" src="<%=require('./images/1.png')%>" alt="template"/>
+          <p class="item__art">Арт 1232425</p>
+          <p class="item__about">Костюм "СИРИУС-Горка" куртка, брюки (гражданские размеры) КМФ Мультикам</p>
+          <p class="item__opt">Опт 3144 ₽</p>
+          <p class="item__roz">Розница 4235 ₽</p>
+          <div class="item__buttons">
+            <button class="item__buy">В корзину</button>
+            <div class="item__like"></div>
+          </div>
+        </div>
+      </div>
+      <div class="item item__1024">
+        <div class="item__container">
+          <img class="item__img" src="<%=require('./images/2.png')%>" alt="template"/>
+          <p class="item__art">Арт 1232425</p>
+          <p class="item__about">Костюм "СИРИУС-Горка" куртка, брюки (гражданские размеры) КМФ Мультикам</p>
+          <p class="item__opt">Опт 3144 ₽</p>
+          <p class="item__roz">Розница 4235 ₽</p>
+          <div class="item__buttons">
+            <button class="item__buy">В корзину</button>
+            <div class="item__like"></div>
+          </div>
+        </div>
+      </div>
+      <div class="item item__1024">
+        <div class="item__container">
+          <img class="item__img" src="<%=require('./images/3.png')%>" alt="template"/>
+          <p class="item__art">Арт 1232425</p>
+          <p class="item__about">Костюм "СИРИУС-Горка" куртка, брюки (гражданские размеры) КМФ Мультикам</p>
+          <p class="item__opt">Опт 3144 ₽</p>
+          <p class="item__roz">Розница 4235 ₽</p>
+          <div class="item__buttons">
+            <button class="item__buy">В корзину</button>
+            <div class="item__like"></div>
+          </div>
+        </div>
+      </div>
+      <div class="item item__1024">
+        <div class="item__container">
+          <img class="item__img" src="<%=require('./images/4.png')%>" alt="template"/>
+          <p class="item__art">Арт 1232425</p>
+          <p class="item__about">Костюм "СИРИУС-Горка" куртка, брюки (гражданские размеры) КМФ Мультикам</p>
+          <p class="item__opt">Опт 3144 ₽</p>
+          <p class="item__roz">Розница 4235 ₽</p>
+          <div class="item__buttons">
+            <button class="item__buy">В корзину</button>
+            <div class="item__like"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button class="items__more">Показать еще</button>
+    <div class="items__pagination">
+      <img class="items__img" src="<%=require('./images/left.png')%>" alt="left"/>
+      <p class="items__1">1</p>
+      <p class="items__2">2</p>
+      <p class="items__3">3</p>
+      <p class="items__4">4</p>
+      <p class="items__all">Все</p>
+      <img class="items__img" src="<%=require('./images/right.png')%>" alt="left"/>
+    </div>
+    </div>
+  </section>
+ </div>
+</div>
+  <footer class="footer">
+  <div class="footer__wrapper">
+    <div class="footer__container">
+      <div class="footer__options">
+        <div class="footer__flex">
+          <div class="footer__column">
+            <p class="footer__item">КАТАЛОГ</p>
+            <p class="footer__item">СПЕЦОДЕЖДА</p>
+            <p class="footer__item">СРЕДСТВА ЗАЩИТЫ РУК</p>
+            <p class="footer__item">АКТИВНЫЙ ОТДЫХ</p>
+            <p class="footer__item">ХОЗТОВАРЫ И ПОСТЕЛЬНЫЕ ПРИНАДЛЕЖНОСТИ</p>
+          </div>
+          <div class="footer__column">
+            <p class="footer__item">ОБУВЬ</p>
+            <p class="footer__item">СРЕДСТВА ИНДИВИДУАЛЬНОЙ ЗАЩИТЫ</p>
+            <p class="footer__item">ЖИЛЕТЫ НА ВСЕ СЛУЧАИ ЖИЗНИ</p>
+            <p class="footer__item">ЛИНИЯ PLUS</p>
+          </div>
+        </div>
+        <p class="footer__sale">ЛИКВИДАЦИЯ</p>
+      </div>
+      <div class="footer__contacts">
+        <p class="footer__phone">+7 (495) 777-2345</p>
+        <p class="footer__call">Заказать звонок</p>
+        <p class="footer__info">info@planeta-sirius.ru</p>
+        <div class="footer__socials">
+          <img class="footer__social" src="<%=require('./images/facebook.png')%>" alt="facebook"/>
+          <img class="footer__social" src="<%=require('./images/inst.png')%>" alt="insta"/>
+          <img class="footer__social" src="<%=require('./images/vk.png')%>" alt="vk"/>
+        </div>
+        <div class="footer__excel-container">
+          <img src="<%=require('./images/excel.png')%>" alt="excel"/>
+          <p class="footer__excel">Скачать прайс-лист</p>
+        </div>
+      </div>
+      <div class="footer__direct">
+        <p class="footer__advertising">Подпишитесь на новости и акции и будьте в курсе всего!</p>
+        <div class="footer__input-container">
+          <input class="footer__input" placeholder="Введите свой e-mail"/>
+          <img class="footer__input-img" src="<%=require('./images/send.png')%>" alt="direct"/>
+        </div>
+        <div class="footer__checkbox">
+          <input class="zaebal" type="checkbox" name="direct" id="direct"/>
+          <label class="footer__label" for="direct">Я даю согласие на обработку персональных данных и соглашаюсь с правилами обработки персональных данных.</label>
+        </div>
+      </div>
+    </div>
+    <div class="footer__copyright">
+      <p class='footer__copyright-year'>2021 © PLANETA-SIRIUS.RU</p>
+      <p class="footer__copyright-text">Вся приведенная на сайте информация, носят исключительно ознакомительный характер и не является публичной офертой.</p>
+    </div>
+  </div>
+  </footer>
+  <div class="popup">
+    <div class="popup__container">
+      <div class="popup__title">
+        <p class="popup__title-text">Выбор опций</p>
+        <img class="popup__close" src="<%=require('./images/closeButton.png')%>" alt="close"/>
+      </div>
+      <div class="popup__option">
+        <p class="popup__option-text">Размерный ряд</p>
+        <p class="popup__option-text">Количество</p>
+      </div>
+        <div class="popup__item">
+          <p class="popup__item-text">Размер 104-108, Рост 170-176 (Арт. 43585) </p>
+          <div class="popup__item-input-container">
+            <input value="0" class="popup__item-input" maxlength="1"/>
+          </div>
+          <img class="popup__symbol" src="<%=require('./images/plus.png')%>" alt="plus"/>
+          <img class="popup__symbol" src="<%=require('./images/minus.png')%>" alt="minus"/>
+        </div>
+        <div class="popup__item">
+          <p class="popup__item-text">Размер 104-108, Рост 170-176 (Арт. 43585) </p>
+          <div class="popup__item-input-container">
+            <input value="0" class="popup__item-input" maxlength="1"/>
+          </div>
+          <img class="popup__symbol" src="<%=require('./images/plus.png')%>" alt="plus"/>
+          <img class="popup__symbol" src="<%=require('./images/minus.png')%>" alt="minus"/>
+        </div>
+        <div class="popup__item">
+          <p class="popup__item-text">Размер 104-108, Рост 170-176 (Арт. 43585) </p>
+          <div class="popup__item-input-container">
+            <input value="0" class="popup__item-input" maxlength="1"/>
+          </div>
+          <img class="popup__symbol" src="<%=require('./images/plus.png')%>" alt="plus"/>
+          <img class="popup__symbol" src="<%=require('./images/minus.png')%>" alt="minus"/>
+        </div>
+        <div class="popup__item">
+          <p class="popup__item-text">Размер 104-108, Рост 170-176 (Арт. 43585) </p>
+          <div class="popup__item-input-container">
+            <input value="0" class="popup__item-input" maxlength="1"/>
+          </div>
+          <img class="popup__symbol" src="<%=require('./images/plus.png')%>" alt="plus"/>
+          <img class="popup__symbol" src="<%=require('./images/minus.png')%>" alt="minus"/>
+        </div>
+        <div class="popup__item">
+          <p class="popup__item-text">Размер 104-108, Рост 170-176 (Арт. 43585) </p>
+          <div class="popup__item-input-container">
+            <input value="0" class="popup__item-input" maxlength="1"/>
+          </div>
+          <img class="popup__symbol" src="<%=require('./images/plus.png')%>" alt="plus"/>
+          <img class="popup__symbol" src="<%=require('./images/minus.png')%>" alt="minus"/>
+        </div>
+        <div class="popup__item">
+          <p class="popup__item-text">Размер 104-108, Рост 170-176 (Арт. 43585) </p>
+          <div class="popup__item-input-container">
+            <input value="0" class="popup__item-input" maxlength="1"/>
+          </div>
+          <img class="popup__symbol" src="<%=require('./images/plus.png')%>" alt="plus"/>
+          <img class="popup__symbol" src="<%=require('./images/minus.png')%>" alt="minus"/>
+        </div>
+        <div class="popup__item">
+          <p class="popup__item-text">Размер 104-108, Рост 170-176 (Арт. 43585) </p>
+          <div class="popup__item-input-container">
+            <input value="0" class="popup__item-input" maxlength="1"/>
+          </div>
+          <img class="popup__symbol" src="<%=require('./images/plus.png')%>" alt="plus"/>
+          <img class="popup__symbol" src="<%=require('./images/minus.png')%>" alt="minus"/>
+        </div>
+        <button class="popup__button">Добавить в корзину</button>
+    </div>
+  </div>
 </body>
 </html>

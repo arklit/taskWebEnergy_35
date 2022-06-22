@@ -1,8 +1,12 @@
 $color: #EB4747;
 .katalog {
-  display: flex;
   background: #F2F2F2;
-  justify-content: space-between;
+  &__wrapper {
+    max-width: 1280px;
+    margin: 0 auto;
+    justify-content: space-between;
+    display: flex;
+  }
   &__container {
     display: flex;
     align-items: center;

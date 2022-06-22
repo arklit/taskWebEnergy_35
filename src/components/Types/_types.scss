@@ -1,4 +1,4 @@
-$color: #EB4747;
+$color: #E93C3C;
 .types{
   margin-top: 50px;
   display: flex;
@@ -24,6 +24,17 @@ $color: #EB4747;
  }
  &__more {
  border: 1px solid $color;
+ background: #F9F9FA;
+ border-radius: 2px;
+ padding: 8.5px 8px;
+ margin: 0 8px 8px 0;
+ font-size: 12px;
+ line-height: 14px;
+ }
+ &__more:hover {
+  background-color: white;
+  color: $color;
+  cursor: pointer;
  }
  &__item:hover {
   background-color: $color;
@@ -32,8 +43,27 @@ $color: #EB4747;
  }
  &__select {
   border: none;
-  align-self: flex-end;
+  color:  #52575C;
  }
+
+ &_hidden {
+  display:none;
+ }
+ &_visible {
+  display:block
+ }
+ &__flex {
+  display: flex;
+  justify-content: flex-end;
+ }
+ &__filter {
+  display: none;
+ }
+}
+@media screen and (max-width: 1280px) {
+  .types {
+    padding: 0 10px;
+  }
 }
 @media screen and (max-width: 1024px) {
   .types {
@@ -42,4 +72,22 @@ $color: #EB4747;
       line-height: 130%;
     }
   }
+}
+@media screen and (max-width: 576px) {
+.types {
+  &__flex {
+    justify-content: space-between;
+    margin-top: 30px;
+  }
+  &__filter {
+    display: flex;
+    align-items: center;
+    &-img {
+      margin-right: 10px;
+    }
+  }
+  &__mobile {
+    display: none;
+  }
+}
 }
